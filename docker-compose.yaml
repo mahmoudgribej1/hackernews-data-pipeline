@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  airflow-webserver:
+    build: .
+    command: webserver
+    ports:
+      - "8085:8080"
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./scripts:/opt/airflow/scripts
+      - ./data:/opt/airflow/data
+    environment:
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@host.docker.internal:5435/airflow
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      - AIRFLOW__WEBSERVER__WEB_SERVER_PORT=8080
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    user: "${AIRFLOW_UID:-50000}:0"
+
+    env_file:
+      - .env
+
+  airflow-scheduler:
+    build: .
+    command: scheduler
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./scripts:/opt/airflow/scripts
+      - ./data:/opt/airflow/data
+    environment:
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@host.docker.internal:5435/airflow
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    user: "${AIRFLOW_UID:-50000}:0"
+    depends_on:
+      - airflow-webserver
+    env_file:
+      - .env
+    
