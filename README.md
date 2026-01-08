@@ -46,19 +46,25 @@ The pipeline runs daily at 8 AM UTC. Each step validates data quality before mov
 ## Screenshots
 
 ### Airflow DAG View
-![Airflow DAG](screenshots/airflow_dag.png)
+![Airflow DAG]([screenshots/airflow_dag.png](https://github.com/mahmoudgribej1/hackernews-data-pipeline/blob/e4173557977f9bab17747d1f3c226c37e274c27a/Screenshot%202026-01-08%20003346.png))
 *The complete pipeline with all tasks and dependencies*
 
 ### S3 Data Lake
-![S3 Storage](screenshots/s3_bucket.png)
+![S3 Storage]([screenshots/s3_bucket.png](https://github.com/mahmoudgribej1/hackernews-data-pipeline/blob/e4173557977f9bab17747d1f3c226c37e274c27a/Screenshot%202026-01-08%20003524.png))
 *Raw data organized by date in AWS S3*
 
 ### Analytics Dashboard
-![Dashboard Overview](screenshots/dashboard_main.png)
+![Dashboard Overview]([screenshots/dashboard_main.png](https://github.com/mahmoudgribej1/hackernews-data-pipeline/blob/e4173557977f9bab17747d1f3c226c37e274c27a/Screenshot%202026-01-08%20003223.png))
 *Real-time insights and trends*
 
-![Dashboard Charts](screenshots/dashboard_charts.png)
+![Dashboard Charts]([screenshots/dashboard_charts.png](https://github.com/mahmoudgribej1/hackernews-data-pipeline/blob/e4173557977f9bab17747d1f3c226c37e274c27a/Screenshot%202026-01-08%20003245.png))
 *Story volume and posting time analysis*
+
+![Dashboard Charts]([[screenshots/dashboard_charts.png](https://github.com/mahmoudgribej1/hackernews-data-pipeline/blob/e4173557977f9bab17747d1f3c226c37e274c27a/Screenshot%202026-01-08%20003245.png)](https://github.com/mahmoudgribej1/hackernews-data-pipeline/blob/e4173557977f9bab17747d1f3c226c37e274c27a/Screenshot%202026-01-08%20003301.png))
+*Top Domains*
+
+![Dashboard Charts]([[screenshots/dashboard_charts.png](https://github.com/mahmoudgribej1/hackernews-data-pipeline/blob/e4173557977f9bab17747d1f3c226c37e274c27a/Screenshot%202026-01-08%20003245.png)](https://github.com/mahmoudgribej1/hackernews-data-pipeline/blob/e4173557977f9bab17747d1f3c226c37e274c27a/Screenshot%202026-01-08%20003315.png))
+*Top Stories*
 
 ---
 
